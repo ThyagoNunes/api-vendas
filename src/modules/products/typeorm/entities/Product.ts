@@ -9,6 +9,7 @@ import {
 @Entity('products') // Nome da tabela em que essa entidade vai fazer o mapeamento
 class Product {
   // atributos
+  // falar pro typeorm qual a configuração de cada atributo desse ( coluna que será mapeado pro DATABASE )
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
