@@ -12,9 +12,9 @@ export class CreateProducts1646857695456 implements MigrationInterface {
             // 1º coluna id
             name: 'id',
             type: 'uuid',
-            isPrimary: true,
+            isPrimary: true, // primary key
             generationStrategy: 'uuid',
-            default: 'uuid_generate_v4()',
+            default: 'uuid_generate_v4()', // por gerar uuid é obrigatóio ter o default
           },
           {
             name: 'name',
