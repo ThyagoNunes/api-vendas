@@ -1,4 +1,4 @@
-import 'reflect-metadata';
+import 'reflect-metadata'; //database
 import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 import routes from './routes';
@@ -17,7 +17,7 @@ app.use(
     if (error instanceof AppError) {
       return response.status(error.statusCode).json({
         status: 'Error',
-        message: 'piroca',
+        message: error.message,
       });
     }
     return response.status(500).json({
