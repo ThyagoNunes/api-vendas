@@ -2,8 +2,8 @@ import 'reflect-metadata'; //database
 import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 import routes from './routes';
-import AppError from '@shared/errors/AppError';
-import '@shared/typeorm';
+import AppError from '@shared/errors/AppError'; // In case of Middleware Error Handler gotcha error, return class return error message.
+import '@shared/typeorm'; // where is located archieve from create connection DB
 
 const app = express();
 
