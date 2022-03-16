@@ -6,14 +6,16 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity('products') // Nome da tabela em que essa entidade vai fazer o mapeamento
+@Entity('products')
+// Uma classe se tornar entidade para o typeorm tem que usar o decoretor @Entity('nameTable')
+// Nome da tabela em que essa entidade vai fazer o mapeamento
 class Product {
   // atributos
   // falar pro typeorm qual a configuração de cada atributo desse ( coluna que será mapeado pro DATABASE )
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
+  @PrimaryGeneratedColumn('uuid') // falar pro typeorm qual config de cada atributo/coluna que vai ser mapeado com DB
+  id: string; //atributos
 
-  @Column()
+  @Column() // não precisa explicitar. Pois, esse tipo já é padrão
   name: string;
 
   @Column('decimal')
