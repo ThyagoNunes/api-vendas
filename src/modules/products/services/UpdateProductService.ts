@@ -20,7 +20,7 @@ class UpdateProductService {
     name,
     price,
     quantity,
-  }: IRequest): Promise<Product | undefined> {
+  }: IRequest): Promise<Product> {
     const productsRepository = getCustomRepository(ProductsRepository); //repo
 
     const product = await productsRepository.findOne(id);
