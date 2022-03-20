@@ -17,10 +17,42 @@ productsRouter.get(
   productsController.show,
 );
 
-productsRouter.post('/', productsController.store);
+productsRouter.post(
+  '/',
+  celebrate({
+    [Segments.BODY]: {
+      name: Joi.string().required(),
+      price: Joi.number().precision(2).required(),
+      quantity: Joi.number().required(),
+    },
+  }),
+  productsController.store,
+);
 
-productsRouter.put('/:id', productsController.update);
+productsRouter.put(
+  '/:id',
+  celebrate({
+    [Segments.BODY]: {
+      name: Joi.string().required(),
+      price: Joi.number().precision(2).required(),
+      quantity: Joi.number().required(),
+    },
+    [Segments.PARAMS]: {
+      id: Joi.string().uuid().required(),
+    },
+  }),
 
-productsRouter.delete('/:id', productsController.delete);
+  productsController.update,
+);
+
+productsRouter.delete(
+  '/:id',
+  celebrate({
+    [Segments.PARAMS]: {
+      id: Joi.string().uuid().required(),
+    },
+  }),
+  productsController.delete,
+);
 
 export default productsRouter;
