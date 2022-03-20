@@ -11,9 +11,7 @@ interface IRequest {
 }
 
 /*serviços deverão ter uma única funcionalidade
-
 e com isso único método e ele irá executar essa responsabilidade específica do serviço */
-
 class UpdateProductService {
   public async execute({
     id,

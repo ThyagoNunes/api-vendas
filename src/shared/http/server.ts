@@ -1,6 +1,8 @@
 import 'reflect-metadata'; //database
 import express, { NextFunction, Request, Response } from 'express';
+import 'express-async-errors';
 import cors from 'cors';
+import { errors } from 'celebrate';
 import routes from './routes';
 import AppError from '@shared/errors/AppError'; // In case of Middleware Error Handler gotcha error, return class return error message.
 import '@shared/typeorm'; // where is located archieve from create connection DB
@@ -10,6 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(routes);
+app.use(errors());
 
 app.use(
   //Middleware for Error Handling [ Error Controllers ]
