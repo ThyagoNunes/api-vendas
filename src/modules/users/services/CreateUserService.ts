@@ -8,11 +8,8 @@ import UsersRepository from '@modules/users/typeorm/repositories/UsersRepository
 
 interface IRequest {
   //verify interfaces and study about
-
   name: string;
-
   email: string;
-
   password: string;
 }
 
@@ -32,9 +29,7 @@ class CreateUserService {
 
     const user = usersRepository.create({
       name,
-
       email,
-
       password,
     });
 
