@@ -15,7 +15,6 @@ interface IRequest {
 }
 
 /*serviços deverão ter uma única funcionalidade
-
 e com isso único método e ele irá executar essa responsabilidade específica do serviço */
 
 class CreateUserService {
@@ -28,7 +27,7 @@ class CreateUserService {
       throw new AppError('Email address already used');
     }
 
-    const hashedPassword = await hash(password, 8); //
+    const hashedPassword = await hash(password, 8); //bcryptjs hash salt
 
     const user = usersRepository.create({
       name,
