@@ -30,5 +30,6 @@ app.use(
   },
 );
 
-app.listen(3333, () => console.log('👾 Server starter at http://localhost:3333');
-);
+app.listen(3333, () => {
+  console.log('👾 Server starter at http://localhost:3333');
+});
