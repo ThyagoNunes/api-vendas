@@ -25,7 +25,8 @@ class CreateSessionsService {
       throw new AppError('Incorrect email/password combination.', 401);
     }
 
-    const passwordConfirmed = await compare(password, user.password); //bcryptjs hash salt
+    const passwordConfirmed = await compare(password, user.password);
+    //compare(bcrypt) 1º param: insertPassword 2º param: Check hash in DATA from that user
 
     if (!passwordConfirmed) {
       throw new AppError('Incorrect email/password combination.', 401);
