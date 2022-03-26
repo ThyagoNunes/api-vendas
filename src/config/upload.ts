@@ -1,8 +1,8 @@
-import path from 'path';
-import multer from 'multer';
+import path from 'path'; //dir
+import multer from 'multer'; // upload
 import crypto from 'crypto';
 
-const uploadFolder = path.resolve(__dirname, '..', '..', 'uploads');
+const uploadFolder = path.resolve(__dirname, '..', '..', 'uploads'); //dir name separeted with ','
 
 export default {
   directory: uploadFolder,
